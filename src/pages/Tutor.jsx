@@ -1,8 +1,10 @@
+import ChatInterface from '../components/shared/tutor/ChatInterface';
+import styles from './Tutor.module.css';
+
 export default function Tutor() {
   return (
-    <div>
-      <h2>Asistente de Aprendizaje Virtual</h2>
-      <p>Aquí interactuarás con el Tutor IA.</p>
+    <div className={styles.pageContainer}>
+      <ChatInterface />
     </div>
   );
 }

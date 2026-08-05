@@ -1,0 +1,122 @@
+.messageWrapper {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  max-width: 85%;
+}
+
+.userWrapper {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.assistantWrapper {
+  margin-right: auto;
+  flex-direction: row;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userAvatar {
+  background-color: var(--primary-600);
+  color: #ffffff;
+}
+
+.assistantAvatar {
+  background-color: var(--bg-hover);
+  color: var(--primary-600);
+  border: 1px solid var(--border-color);
+}
+
+.bubble {
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.userBubble {
+  background-color: var(--primary-600);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.assistantBubble {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.userText {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.markdownContainer {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.markdownContainer p {
+  margin: 0 0 0.75rem 0;
+}
+
+.markdownContainer p:last-child {
+  margin-bottom: 0;
+}
+
+.markdownContainer h1,
+.markdownContainer h2,
+.markdownContainer h3,
+.markdownContainer h4 {
+  margin: 1rem 0 0.5rem 0;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.markdownContainer ul, 
+.markdownContainer ol {
+  margin: 0.5rem 0 0.75rem 0;
+  padding-left: 1.25rem;
+}
+
+.markdownContainer li {
+  margin-bottom: 0.25rem;
+}
+
+.markdownContainer blockquote {
+  border-left: 3px solid var(--primary-600);
+  margin: 0.75rem 0;
+  padding-left: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.markdownContainer code:not([class*="language-"]) {
+  background-color: var(--bg-hover);
+  color: var(--primary-600);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+  font-size: 0.875em;
+  border: 1px solid var(--border-color);
+}
+
+.markdownContainer div[class*="language-"] {
+  margin: 0.75rem 0 !important;
+  border-radius: var(--radius-md) !important;
+  font-family: 'Fira Code', Consolas, Monaco, monospace !important;
+  font-size: 0.875rem !important;
+  box-shadow: var(--shadow-sm);
+}
