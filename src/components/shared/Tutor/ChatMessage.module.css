@@ -103,7 +103,6 @@
   font-style: italic;
 }
 
-/* --- CÓDIGO INLINE EXCLUSIVO (ej. <p> y </p> en el texto) --- */
 .markdownContainer code:not([class*="language-"]),
 .assistantBubble code:not([class*="language-"]) {
   background-color: rgba(59, 130, 246, 0.12) !important;
@@ -115,7 +114,6 @@
   border: 1px solid rgba(59, 130, 246, 0.25) !important;
 }
 
-/* Modo oscuro para código inline */
 :global(.dark) .markdownContainer code:not([class*="language-"]),
 :global([data-theme="dark"]) .markdownContainer code:not([class*="language-"]),
 :global(.dark-mode) .markdownContainer code:not([class*="language-"]),
@@ -127,7 +125,6 @@
   border-color: rgba(96, 165, 250, 0.3) !important;
 }
 
-/* --- BLOQUES DE CÓDIGO MULTILÍNEA --- */
 .markdownContainer div[class*="language-"],
 .markdownContainer pre {
   margin: 0.75rem 0 !important;
@@ -138,7 +135,6 @@
   overflow-x: auto;
 }
 
-/* Desactivar fondos y bordes accidentales dentro de cualquier bloque de código */
 .markdownContainer pre code,
 .markdownContainer pre span,
 .markdownContainer [class*="language-"] code,
