@@ -47,40 +47,40 @@ Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
 - **npm** o **yarn**
 
 2. Clonar el Repositorio
-    git clone https://github.com/ricardoarraiz/tutor-ai-muyu
-    cd tutor-ai-muyu
+- git clone https://github.com/ricardoarraiz/tutor-ai-muyu
+- cd tutor-ai-muyu
 
 3. Instalar Dependencias
-    npm install
+- npm install
 
 4. Configurar Variables de Entorno (Requerido para la IA)
-    Para que las funcionalidades del Tutor IA funcionen correctamente, debes crear un archivo .env.local en la raíz del proyecto y definir tu clave de API:
+- Para que las funcionalidades del Tutor IA funcionen correctamente, debes crear un archivo .env.local en la raíz del proyecto y definir tu clave de API:
 
-    VITE_GROQ_API_KEY=tu_api_key_aqui
+- VITE_GROQ_API_KEY=tu_api_key_aqui
 
 5. Iniciar Servidor de Desarrollo
-    npm run dev
+- npm run dev
 
 🧪 Scripts Disponibles
-npm run dev: Inicia el servidor de desarrollo local con Vite.
+- npm run dev: Inicia el servidor de desarrollo local con Vite.
 
-npm run build: Compila la aplicación optimizada para producción.
+- npm run build: Compila la aplicación optimizada para producción.
 
-npm run preview: Previsualiza localmente el build de producción.
+- npm run preview: Previsualiza localmente el build de producción.
 
-npm run lint: Ejecuta ESLint 10 para validación y estandarización de código.
+- npm run lint: Ejecuta ESLint 10 para validación y estandarización de código.
 
 🤝 Convención de Commits
-En el repositorio se aplica la convención Conventional Commits:
+- En el repositorio se aplica la convención Conventional Commits:
 
-feat: Nuevas funcionalidades.
+- feat: Nuevas funcionalidades.
 
-fix: Correcciones de errores de código o interfaz.
+- fix: Correcciones de errores de código o interfaz.
 
-docs: Cambios en documentación (README.md, comentarios).
+- docs: Cambios en documentación (README.md, comentarios).
 
-style: Formato o cambios de diseño CSS sin alterar funcionalidad.
+- style: Formato o cambios de diseño CSS sin alterar funcionalidad.
 
-refactor: Reestructuración o limpieza de código.
+- refactor: Reestructuración o limpieza de código.
 
 Prueba desarrollada para Muyu Education.
