@@ -1,15 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 import styles from './ChatInput.module.css';
 
-export default function ChatInput({ onSendMessage, disabled }) {
-  const [input, setInput] = useState('');
+export default function ChatInput({ initialValue = '', onSendMessage, disabled }) {
+  const [input, setInput] = useState(initialValue);
+  const [prevInitialValue, setPrevInitialValue] = useState(initialValue);
+  const textareaRef = useRef(null);
+
+  if (initialValue !== prevInitialValue) {
+    setPrevInitialValue(initialValue);
+    setInput(initialValue);
+  }
+
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }, [input]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim() && !disabled) {
       onSendMessage(input);
       setInput('');
+      if (textareaRef.current) {
+        textareaRef.current.style.height = 'auto';
+      }
     }
   };
 
@@ -23,6 +41,7 @@ export default function ChatInput({ onSendMessage, disabled }) {
   return (
     <form className={styles.inputForm} onSubmit={handleSubmit}>
       <textarea
+        ref={textareaRef}
         className={styles.textarea}
         placeholder="Hazle una pregunta a tu Tutor IA..."
         value={input}

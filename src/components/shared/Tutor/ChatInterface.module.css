@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 500px;
-  max-height: 100vh;
+  max-height: 100%;
   background-color: var(--bg-surface-elevated, var(--bg-surface, #ffffff));
   border-radius: var(--radius-xl, 12px);
   border: 1px solid var(--border-color, #e5e7eb);
@@ -20,6 +19,7 @@
   border-bottom: 1px solid var(--border-color, #e5e7eb);
   gap: 1rem;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .headerLeft {
@@ -73,7 +73,8 @@
 }
 
 .messagesContainer {
-  flex: 1;
+  flex: 1 1 0%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -201,6 +202,8 @@
   padding: 1rem 1.25rem;
   background-color: transparent;
   border-top: 1px solid var(--border-color, #e5e7eb);
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 :global(.dark) .messagesContainer,

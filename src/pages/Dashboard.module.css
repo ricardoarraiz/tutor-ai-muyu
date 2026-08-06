@@ -1,0 +1,217 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Header de Bienvenida */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card, var(--bg-secondary, rgba(255, 255, 255, 0.04)));
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.greeting h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, inherit);
+}
+
+.highlight {
+  color: var(--primary-color, #6366f1);
+}
+
+.greeting p {
+  color: var(--text-secondary, rgba(255, 255, 255, 0.65));
+  font-size: 1rem;
+}
+
+.primaryChatBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color, #6366f1);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primaryChatBtn:hover {
+  background-color: var(--primary-hover, #4f46e5);
+  transform: translateY(-1px);
+}
+
+/* Sección de Sugerencias */
+.suggestionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconBulb {
+  color: #f59e0b;
+}
+
+.sectionTitle h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, inherit);
+}
+
+.refreshBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  color: var(--text-secondary, inherit);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refreshBtn:hover {
+  background-color: var(--bg-hover, rgba(255, 255, 255, 0.08));
+  color: var(--text-primary, inherit);
+}
+
+/* Grid de Tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--bg-card, var(--bg-secondary, rgba(255, 255, 255, 0.04)));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: var(--primary-color, #6366f1);
+}
+
+.badge {
+  align-self: flex-start;
+  background-color: var(--badge-bg, rgba(99, 102, 241, 0.15));
+  color: var(--primary-color, #818cf8);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.promptText {
+  color: var(--text-primary, inherit);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.usePromptBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: var(--primary-color, #818cf8);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  transition: color 0.2s ease;
+}
+
+.usePromptBtn:hover {
+  color: var(--primary-hover, #a5b4fc);
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .primaryChatBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.actionGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.copiedBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.goToTutorBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--primary-color, #6366f1);
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.goToTutorBtn:hover {
+  background-color: var(--primary-hover, #4f46e5);
+  transform: translateY(-1px);
+}
