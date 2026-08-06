@@ -4,7 +4,7 @@
   height: 100%;
   min-height: 500px;
   max-height: 100vh;
-  background-color: var(--bg-surface-elevated, #ffffff);
+  background-color: var(--bg-surface-elevated, var(--bg-surface, #ffffff));
   border-radius: var(--radius-xl, 12px);
   border: 1px solid var(--border-color, #e5e7eb);
   box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  background-color: var(--bg-surface, #ffffff);
+  background-color: transparent;
   border-bottom: 1px solid var(--border-color, #e5e7eb);
   gap: 1rem;
   flex-wrap: wrap;
@@ -62,7 +62,7 @@
 }
 
 .clearBtn:hover:not(:disabled) {
-  background-color: var(--bg-hover, #f9fafb);
+  background-color: rgba(239, 68, 68, 0.1);
   color: #ef4444;
   border-color: rgba(239, 68, 68, 0.3);
 }
@@ -78,7 +78,8 @@
   flex-direction: column;
   overflow-y: auto;
   padding: 1.5rem 1.25rem;
-  background-color: var(--bg-body, #f9fafb);
+  background-color: transparent !important;
+  background: transparent !important;
   position: relative;
 }
 
@@ -100,7 +101,7 @@
   justify-content: center;
   width: 64px;
   height: 64px;
-  background-color: var(--bg-surface, #ffffff);
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: 50%;
   color: var(--primary-600, #2563eb);
@@ -124,7 +125,8 @@
 }
 
 .emptyState p strong {
-  color: var(--text-primary, #111827);
+  color: var(--primary-600, #3b82f6);
+  font-weight: 600;
 }
 
 .loadingState {
@@ -132,7 +134,7 @@
   align-items: center;
   gap: 0.875rem;
   padding: 0.875rem 1.125rem;
-  background-color: var(--bg-surface, #ffffff);
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: var(--radius-lg, 12px);
   border-bottom-left-radius: 2px;
@@ -197,8 +199,27 @@
 
 .inputContainer {
   padding: 1rem 1.25rem;
-  background-color: var(--bg-surface, #ffffff);
+  background-color: transparent;
   border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+:global(.dark) .messagesContainer,
+:global([data-theme="dark"]) .messagesContainer,
+:global(.dark-mode) .messagesContainer {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+:global(.dark) .emptyState h3,
+:global([data-theme="dark"]) .emptyState h3,
+:global(.dark-mode) .emptyState h3 {
+  color: var(--text-primary, #ffffff) !important;
+}
+
+:global(.dark) .emptyState p,
+:global([data-theme="dark"]) .emptyState p,
+:global(.dark-mode) .emptyState p {
+  color: var(--text-secondary, #94a3b8) !important;
 }
 
 @media (max-width: 640px) {

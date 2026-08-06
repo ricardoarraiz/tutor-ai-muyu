@@ -103,20 +103,49 @@
   font-style: italic;
 }
 
-.markdownContainer code:not([class*="language-"]) {
-  background-color: var(--bg-hover);
-  color: var(--primary-600);
-  padding: 0.15rem 0.4rem;
-  border-radius: var(--radius-sm);
+/* --- CÓDIGO INLINE EXCLUSIVO (ej. <p> y </p> en el texto) --- */
+.markdownContainer code:not([class*="language-"]),
+.assistantBubble code:not([class*="language-"]) {
+  background-color: rgba(59, 130, 246, 0.12) !important;
+  color: #2563eb !important;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm, 4px);
   font-family: 'Fira Code', Consolas, Monaco, monospace;
   font-size: 0.875em;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
 }
 
-.markdownContainer div[class*="language-"] {
+/* Modo oscuro para código inline */
+:global(.dark) .markdownContainer code:not([class*="language-"]),
+:global([data-theme="dark"]) .markdownContainer code:not([class*="language-"]),
+:global(.dark-mode) .markdownContainer code:not([class*="language-"]),
+:global(.dark) .assistantBubble code:not([class*="language-"]),
+:global([data-theme="dark"]) .assistantBubble code:not([class*="language-"]),
+:global(.dark-mode) .assistantBubble code:not([class*="language-"]) {
+  background-color: rgba(96, 165, 250, 0.18) !important;
+  color: #93c5fd !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+/* --- BLOQUES DE CÓDIGO MULTILÍNEA --- */
+.markdownContainer div[class*="language-"],
+.markdownContainer pre {
   margin: 0.75rem 0 !important;
   border-radius: var(--radius-md) !important;
   font-family: 'Fira Code', Consolas, Monaco, monospace !important;
   font-size: 0.875rem !important;
   box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+/* Desactivar fondos y bordes accidentales dentro de cualquier bloque de código */
+.markdownContainer pre code,
+.markdownContainer pre span,
+.markdownContainer [class*="language-"] code,
+.markdownContainer [class*="language-"] span {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
